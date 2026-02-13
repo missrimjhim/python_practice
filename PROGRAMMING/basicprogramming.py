@@ -44,7 +44,7 @@ class BasicProgram:
         print("Num2 after swaps:", b)
         return
 
-    #Write a program that calculates the factorial of
+    #6.Write a program that calculates the factorial of
     # a given number (e.g., 5!) using a for loop.
     def factorial(self,n):
         f=1
@@ -55,7 +55,7 @@ class BasicProgram:
                 f=f*n
                 n=n-1
         return f
-    # Create a list of 5 fruits. Add a new fruit to the end of the list,
+    # 7.Create a list of 5 fruits. Add a new fruit to the end of the list,
     # then remove the second fruit (at index 1).
 
     def list_manipulation(self,arr,index):
@@ -67,7 +67,7 @@ class BasicProgram:
         else:
             arr.insert(index,ele)
         return arr
-    #Write a program that takes a string and
+    #8.Write a program that takes a string and
     # reverses it (e.g., “Python” becomes “nohtyP”).
 
     def reverse_string(self,word):
@@ -76,7 +76,7 @@ class BasicProgram:
         for i in range(n-1,-1,-1):
             rev=rev+word[i]
         return rev
-    #  Write a program to count the total number of
+    # 9.Write a program to count the total number of
     #  vowels (a, e, i, o, u) present in a given sentence.
     def vowel_counter(self,word):
         vowel="aeiou"
@@ -85,13 +85,99 @@ class BasicProgram:
             if i in vowel:
                 count=count+1
         return count
+    #10.Given a list of integers, find and
+    # print both the largest and the smallest numbers.
+    def min_max(self,arr):
+        max_num=arr[0]
+        min_num=arr[0]
+        for i in arr:
+            if i>max_num:
+                max_num=i
+            if i<min_num:
+                min_num=i
+        return (max_num,min_num)
+    # 11.Write a program to find how many times
+    # the substring “Emma” appears in a given string.
+    def string_counter(self,str_x,word):
+        str_new=[]
+        count=0
+        str_new=str_x.split(" ")
+        print("str_new: ",str_new)
+        for i in str_new:
+            if word==i:
+                count=count+1
+        return count
+    #Write a program to check if a given
+    # number is a palindrome (reads the same forwards and backwards).
+    def palindrome_checker(self,num):
+        rev=0
+        temp=num
+        while(num!=0):
+            digit=num%10
+            rev=rev*10+digit
+            num=num//10
+        if(rev==temp):
+            return True
+        else:
+            return False
+
+    # Write a function called exponent(base, exp)
+    # that returns an integer value of the base raised to the power of the exponent.
+    def exponent(self,base, exp):
+        power=abs(exp)
+        res = 1
+        if base==0 or base==0 and power==0:
+            return "Undefined"
+        elif exp < 0:
+            for i in range(power):
+                res = res * base
+                res = 1/res
+        elif exp>0:
+            for i in range(power):
+                res=res*base
+
+
+        return res
+
+    #fibonnaci
+
+    def fibonnaci(self,n):
+        num1=0
+        num2=1
+        for i in range(n):
+            num3=num1+num2
+            print(num1)
+            num1=num2
+            num2=num3
+
+
 
 
 obj = BasicProgram()
-word=input("Enter a word: ")
-print(obj.vowel_counter(word))
+
+n=int (input("Enter number: "))
+obj.fibonnaci(n)
+# base, exp = int(input("Enter base: ")), int(input("Enter exponent: "))
+# print("Exponental Value: ", obj.exponent(base,exp))
 
 
+# n=int(input("Enter a num: "))
+# print("Is Palindrome? :", obj.palindrome_checker(n))
+
+# sentence=input("Enter your string: ")
+# word=input("Enter the word to be counted: ")
+# print(obj.string_counter(sentence,word))
+
+# arr=[]
+# n=int(input("Enter the array size: "))
+# for num in range(n):
+#     num=int(input("Enter Element: "))
+#     arr.append(num)
+# max_value, min_value=obj.min_max(arr)
+# print("Max: ",max_value,"Min: ",min_value)
+
+# word=input("Enter a word: ")
+# print(obj.vowel_counter(word))
 #print(obj.reverse_string(word))
 
 
