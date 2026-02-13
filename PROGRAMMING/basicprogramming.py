@@ -153,10 +153,7 @@ class BasicProgram:
 
 
 
-obj = BasicProgram()
 
-n=int (input("Enter number: "))
-obj.fibonnaci(n)
 # base, exp = int(input("Enter base: ")), int(input("Enter exponent: "))
 # print("Exponental Value: ", obj.exponent(base,exp))
 
@@ -201,3 +198,13 @@ obj.fibonnaci(n)
 # a = int(input("Enter number 1: "))
 # b = int(input("Enter number 2: "))
 # print(obj.product_Or_sum(a,b))
+
+class Car:
+    def __init__(self,make,model,year):
+        self.make=make
+        self.model=model
+        self.year=year
+    def start_engine(self):
+        print(f"The {self.year} {self.make} {self.model}'s engine is now running!")
+car_obj=Car("Camry","Toyota","2022")
+car_obj.start_engine()
